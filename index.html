@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Voice Chat Agent</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: #111827;
+      margin: 1.5rem;
+    }
+
+    elevenlabs-convai {
+      width: 100%;
+      max-width: 800px;
+      height: 600px;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      elevenlabs-convai {
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Talk to Our AI Voice Agent</h1>
+
+  <!-- Embed the ElevenLabs AI Agent -->
+  <elevenlabs-convai agent-id="agent_01jx70y390em98782c0s5g4nq4"></elevenlabs-convai>
+
+  <!-- Load the ElevenLabs Widget Script -->
+  <script 
+    src="https://unpkg.com/@elevenlabs/convai-widget-embed" 
+    async 
+    type="text/javascript">
+  </script>
+</body>
+</html>
