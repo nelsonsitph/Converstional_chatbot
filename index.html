@@ -1,35 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Voice Chat Agent</title>
+  <title>你的社交訓練導師</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9fafb;
+      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 280px;
+      background-color: #ffffff;
+      border-right: 1px solid #e5e7eb;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e5e7eb;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+
+    .content {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      justify-content: start;
+      padding: 2rem;
+      background: linear-gradient(to bottom, #dff1ff, #ffffff);
+      position: relative;
+      overflow-y: auto;
     }
 
-    h1 {
+    .hero {
+      background: url('https://www.transparenttextures.com/patterns/cartographer.png'), #cfe7ff;
+      border-radius: 20px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 800px;
       text-align: center;
-      color: #111827;
-      margin: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #334155;
+    }
+
+    .illustration {
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem auto;
+    }
+
+    #ai-widget {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      background-color: #ffffff;
     }
 
     elevenlabs-convai {
       width: 100%;
-      max-width: 800px;
       height: 600px;
       display: block;
+      border-radius: 12px;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .hero {
+        padding: 1.5rem;
+      }
+
       elevenlabs-convai {
         height: 500px;
       }
@@ -37,12 +136,59 @@
   </style>
 </head>
 <body>
-  <h1>Talk to Our AI Voice Agent</h1>
+  <header>你的社交訓練導師</header>
 
-  <!-- Embed the ElevenLabs AI Agent -->
-  <elevenlabs-convai agent-id="agent_01jx70y390em98782c0s5g4nq4"></elevenlabs-convai>
+  <main>
+    <aside class="sidebar">
+      <h2>訓練主題</h2>
+      <ul>
+        <li>靈活變通有辦法</li>
+        <li>目標明確、靈活行動</li>
+        <li>靈活變通策略：如何照顧心情?</li>
+        <li>靈活變通策略 - 我應該失望多久？</li>
+        <li>靈活變通策略 - 這行動令我更接近自己所重視的事嗎？</li>
+        <li>立好印象</li>
+        <li>期望行為</li>
+        <li>解讀對方信息</li>
+        <li>合適的衣著打扮</li>
+        <li>分享小食(行為舉止)</li>
+        <li>雙向溝通1：溝通要認真</li>
+        <li>溝通時的身體語言（眼耳口到）</li>
+        <li>留意話題，展現興趣</li>
+        <li>不做訪問員</li>
+        <li>不霸住說話</li>
+        <li>不重覆話題</li>
+        <li>不取笑及指點別人</li>
+        <li>避免問私人問題</li>
+        <li>電子通訊溝通 - 交換聯絡</li>
+        <li>電子通訊溝通 - 開展電話交談</li>
+        <li>結束電話談話</li>
+        <li>電子通訊四不</li>
+        <li>加入群組對話</li>
+        <li>加入後談相同話題</li>
+        <li>未能成功加入對話而要離開對話</li>
+        <li>開始時能加入對話，後來被拒絕而要離開對話</li>
+        <li>成功加入對話而要離開對話</li>
+        <li>正面回應別人提醒/評語</li>
+        <li>不互相嘲笑</li>
+      </ul>
+    </aside>
 
-  <!-- Load the ElevenLabs Widget Script -->
+    <section class="content">
+      <div class="hero">
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201634.png" alt="friendly mascot" class="illustration" />
+        <h2>歡迎使用你的社交訓練導師</h2>
+        <p>透過語音 AI 練習社交技巧，提升自信與溝通能力！</p>
+      </div>
+
+      <!-- ✅ Reusable AI Widget Block -->
+      <div id="ai-widget">
+        <elevenlabs-convai agent-id="agent_01jx70y390em98782c0s5g4nq4"></elevenlabs-convai>
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ Widget Script (Required Once) -->
   <script 
     src="https://unpkg.com/@elevenlabs/convai-widget-embed" 
     async 
